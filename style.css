@@ -942,6 +942,15 @@ select#prdselection {
 select#prdselection-kydex {
 	font-size: 24px;
 }
+p.product-description {
+	font-style: italic;
+	font-size: .9rem;
+	margin-top: 5px;
+}
+p.product-description strong {
+	font-style: normal;
+	color: #000;
+}
 fieldset select {
 	clear: both;
 	display: block;
@@ -1524,7 +1533,7 @@ form#search_form {
 .header-wrapper{ width: auto;}
 .main-nav-list{ display: none; }
 .header-top-nav{ display: none !important; }
-.show-menu {		display:block;	}      
+.show-menu {		display:block;	}
 .mobile-search-icon{  display: block;  position: absolute; top: 10px; right: 70px; }
 .mobile-search-box{ display: none; width: 100%;   background-color: #f1f2f4; }
 .mobile-search-box .searchbox{   text-align: center; }
@@ -1535,16 +1544,16 @@ ul.mobile-nav-list  {background-color: #f1f2f4;position: static;display: none;bo
 ul.mobile-nav-list li {margin-bottom: 1px;display: block;padding: 5px;border-bottom: 1px solid #cccacb;}
 ul.mobile-nav-list li li{ border: none; }
 /*Make all menu links full width*/
-ul.mobile-nav-list li, ul.mobile-nav-list li a {width: 100%; display: block;}	    
+ul.mobile-nav-list li, ul.mobile-nav-list li a {width: 100%; display: block;}
 ul.mobile-nav-list li a{ padding-left: 40px; display: block; }
 ul.mobile-nav-list li a span.arrow{   position: absolute;  right: 40px; }
 ul.mobile-nav-list li ul{ padding-left: 20px; }
 footer .col-3{ float: none; }
 .footer-logo-1{ padding-right: 40px;  }
 .footer-logo-2{ padding-right: 40px; }
-.footer-logo-3{ padding-right: 40px; }  
+.footer-logo-3{ padding-right: 40px; }
 .footer-social .col-3 { border: none; padding: 0 0 15px 0; width: auto; margin: 0; }
-.footer-menu .col-3{ border: none; padding: 0 0 15px 0; width: auto; margin: 0; }    
+.footer-menu .col-3{ border: none; padding: 0 0 15px 0; width: auto; margin: 0; }
 .home-main-menu{ background: none; }
 .home-main-menu img {padding-left: 0px;padding-top: 20px;}
 .home-main-menu a{display: block;clear: both;padding-bottom: 20px;text-align: center;}
@@ -1559,30 +1568,30 @@ footer .col-3{ float: none; }
 .header-wrapper{ width: auto;}
 .main-nav-list{ display: none; }
 .header-top-nav{ display: none !important; height: 30px;}
-.show-menu {		display:block;	}         
+.show-menu {		display:block;	}
 /*Display 'show menu' link*/
-.show-menu {		display:block;	}    
+.show-menu {		display:block;	}
 .mobile-search-icon{ display: block; position: absolute; top: 5px; right: 70px; }
 .mobile-search-box{ display: none; width: 100%;   background-color: #f1f2f4; }
 .mobile-search-box .searchbox{   text-align: center; }
-.mobile-search-box .search-input{ margin: 20px; width: 240px; }    
+.mobile-search-box .search-input{ margin: 20px; width: 240px; }
 /*Make dropdown links appear inline*/
 ul.mobile-nav-list  {    	background-color: #f1f2f4;		position: static;		display: none;        border-top: 4px solid red;		margin-top: 0;        padding-left: 0;	}
 /*Create vertical spacing*/
 ul.mobile-nav-list li {		margin-bottom: 1px;        display: block;        padding: 5px;                border-bottom: 1px solid #cccacb;	}
 ul.mobile-nav-list li li{ border: none; }
 /*Make all menu links full width*/
-ul.mobile-nav-list li, ul.mobile-nav-list li a {		width: 100%; display: block;	}	            
+ul.mobile-nav-list li, ul.mobile-nav-list li a {		width: 100%; display: block;	}
 ul.mobile-nav-list li a{ padding-left: 40px; display: block; }
 ul.mobile-nav-list li a span.arrow{   position: absolute;  right: 40px; }
 ul.mobile-nav-list li ul{ padding-left: 20px; }
 footer .col-3{ float: none; }
 .footer-logo-1{ padding-right: 5px; width: 68px;  }
 .footer-logo-2{ padding-right: 0; width: 74px; }
-.footer-logo-3{ padding-right: 0; width: 92px; }  
-.footer-logo-4{ padding-right: 0; width: 56px; }  
+.footer-logo-3{ padding-right: 0; width: 92px; }
+.footer-logo-4{ padding-right: 0; width: 56px; }
 .footer-social .col-3 { border: none; padding: 0 0 15px 0; width: auto; margin: 0; }
-.footer-menu .col-3{ border: none; padding: 0 0 15px 0; width: auto; margin: 0; }    
+.footer-menu .col-3{ border: none; padding: 0 0 15px 0; width: auto; margin: 0; }
 .footer-logos div.wrap{ padding: 0; }
 .home-main-menu{ width: 290px; background: none; padding: 5px; }
 .home-main-menu img {    padding-left: 0;    padding-top: 5px;  }

@@ -132,7 +132,6 @@ if(isset($_POST["productseries"])){
        var oldname =$(this).find('option:selected').attr('oldname');
        var description =$(this).find('option:selected').attr('description');
        //$(this).parents('.dynamic_product_binded').find('#populate_description').append("<b>" + oldname + "</b>");
-      $(this).next().html("<strong>Description: </strong><span id='populate_description'>" + description + "</span>");
        });
     });
 </script>

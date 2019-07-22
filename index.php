@@ -230,6 +230,7 @@ $(document).ready(function(){
             $("#dynamic_product_binded").html(data);
         });
     });
+    // change the description under the product select field...
     $('body').on('change', '#prd-select-populate', function() {
       $('p.product-description').remove();
       var description = $(this).find(':selected').attr('description');
