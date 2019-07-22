@@ -2,7 +2,7 @@
 if(isset($_POST["productseries"])){
     // Capture selected country
     $series = $_POST["productseries"];
-     
+
     // Define country and city array
 /*    $seriesArr = array(
                     "UTILITY ABS 1000 SERIES" => array("ALLEN® 1050UT "),
@@ -76,7 +76,7 @@ if(isset($_POST["productseries"])){
                                                          "ALLEN® 5155WHG"=>array('oldname' =>'825/3800' ,'description'=>'High gloss, high impact ASA-ABS'),
                                                          "ALLEN® 5160WHG"=>array('oldname' =>'825/LXS' ,'description'=>'High gloss, high impact ASA-ABS'),
                                                          "ALLEN® 5165WHG"=>array('oldname' =>'825/752' ,'description'=>'High gloss, high impact ASA-ABS')
-                                                        
+
                                                         ),
                     "ACRYLIC/ABS WEATHERABLE PRODUCTS 6000 SERIES" => array(
                                                         "-- please select --"=>array('oldname' =>'','description'=>''),
@@ -92,7 +92,7 @@ if(isset($_POST["productseries"])){
                                                         "ALLEN® 6300HG"=>array('oldname' =>'Solarkote A200/LXS' ,'description'=>'High gloss, medium impact Solarkote-ABS'),
                                                         "ALLEN® 6350HG"=>array('oldname' =>'Solarkote A200/752' ,'description'=>'High gloss, medium impact Solarkote-ABS'),
                                                         "ALLEN® 6400LG"=>array('oldname' =>'Solarkote A200M/752' ,'description'=>'Low gloss, medium impact Solarkote-ABS')
-                                                        ) ,   
+                                                        ) ,
                     "PC/ABS PRODUCTS 8000 SERIES" => array(
                                                             "-- please select --"=>array('oldname' =>'','description'=>''),
                                                          "ALLEN® 8050TX"=>array('oldname' =>'2000EZ','description'=>'High gloss, high impact PC / ABS textured only'),
@@ -100,14 +100,14 @@ if(isset($_POST["productseries"])){
                                                          "ALLEN® 8200BC"=>array('oldname' =>'M303FR','description'=>'High gloss, high impact FRPC / ABS  bio compatible'),
                                                          "ALLEN® 8250MD"=>array('oldname' =>'CM6210' ,'description'=>'High gloss, high impact FRPC / ABS G.E.  medical spec'),
                                                          "ALLEN® 8300FR"=>array('oldname' =>'FR3030' ,'description'=>'High gloss, high impact FRPC / ABS')
-                                                        ),    
+                                                        ),
                     "ALEXTRA AND PC PRODUCTS 9000 SERIES" => array(
                                                           "-- please select --"=>array('oldname' =>'','description'=>''),
                                                          "ALEXTRA®ET"=>array('oldname' =>'PC','description'=>'High gloss, very high impact, very high heat  UV PC'),
                                                          "ALLEN® 9000PC"=>array('oldname' =>'EXL 1330 PC','description'=>'High gloss, very high impact, extreme low temp UV PC')
-                                                        )                                                                                                                                 
-                );              
-   
+                                                        )
+                );
+
     // Display city dropdown based on country name
     if($series !== 'Select'){
         echo "<label for='prd-select'>Product <span class='required-error'>*</span></label>";
@@ -115,15 +115,15 @@ if(isset($_POST["productseries"])){
         foreach($seriesArr[$series] as $key => $value){ ?>
             <?php if(is_array($value)): ?>
             <option value="<?php echo $key; ?>" oldname ="<?php echo $value['oldname']; ?>" description = "<?php echo $value['description'] ?>">
-                <?php echo $key; ?><?php if($value['oldname']){ echo '('.$value['oldname'].')';}?>
+                <?php echo $key; ?><?php if($value['oldname']){ echo ' &mdash; [Formerly '.$value['oldname'].']';}?>
             </option>
             <?php else: ?>
             <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
             <?php endif; ?>
             <?php
         }
-        echo "</select><p><strong>Description:</strong><span id='populate_description'> Low gloss, medium impact ABS</span></p>";
-    } 
+        echo "</select>";
+    }
 }
 ?>
 <script type="text/javascript">
@@ -132,8 +132,7 @@ if(isset($_POST["productseries"])){
        var oldname =$(this).find('option:selected').attr('oldname');
        var description =$(this).find('option:selected').attr('description');
        //$(this).parents('.dynamic_product_binded').find('#populate_description').append("<b>" + oldname + "</b>");
-      $(this).next().html("<strong>Description:</strong><span id='populate_description'>" + description + "</span>");
+      $(this).next().html("<strong>Description: </strong><span id='populate_description'>" + description + "</span>");
        });
     });
 </script>
-                                     

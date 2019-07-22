@@ -1,4 +1,6 @@
+
 <div class="allen hide">
+
     <div class="form_heading_section">
         <h2><span>Step 2 of 3:</span> Select a product</h2>
     </div>
@@ -46,7 +48,7 @@
                         <option name='ALLEN® 2025LG — [ formerly ULG/UTILITY ]' value="ALLEN® 2025LG — [ formerly ULG/UTILITY ]">ALLEN® 2025LG — [ formerly ULG/UTILITY ]</option>
                         <option name='ALLEN® 2025LG — [ formerly ULG/UTILITY ]22' value="ALLEN® 2025LG — [ formerly ULG/UTILITY ]22">ALLEN® 2025LG — [ formerly ULG/UTILITY ]22</option>
                     </select>
-                    <p><strong>Description:</strong> Low gloss, medium impact ABS</p>
+                    <p class="list-description hidden"></p>
                 </label>
             </div>
             <div class="halfwidth row-two">

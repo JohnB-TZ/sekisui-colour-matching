@@ -120,8 +120,13 @@
 
 
 
-
 	
 
 
 </footer>
+
+<script type="text/javascript">
+	$(".mobile-search-icon").on("click", function(){
+	$(".mobile-search-box").toggle();
+});
+</script>

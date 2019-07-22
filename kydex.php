@@ -1,4 +1,5 @@
 <div class="kydex hide">
+    
     <div class="form_heading_section">
         <h2><span>Step 2 of 3:</span> Select a product</h2>
     </div>

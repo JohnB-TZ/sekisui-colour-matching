@@ -109,7 +109,7 @@ $(document).ready(function() {
     });
 
     //$('.addmore').click(function(event) {
-    $('body').on('click', '.addmore', function(event) {    	
+    $('body').on('click', '.addmore', function(event) {
         event.preventDefault();
         current_fs = $('#step3');
         prev_fs = $('#step1');
@@ -219,8 +219,8 @@ $(document).ready(function() {
 <script type="text/javascript">
 $(document).ready(function(){
 		 $('body').on('change',".product_selection_series ", function(){
-    	console.log('1');
         var product_selection_series  = $(".product_selection_series  option:selected").val();
+        $('p.product-description').remove();
         console.log(product_selection_series);
         $.ajax({
             type: "POST",
@@ -229,6 +229,11 @@ $(document).ready(function(){
         }).done(function(data){
             $("#dynamic_product_binded").html(data);
         });
+    });
+    $('body').on('change', '#prd-select-populate', function() {
+      $('p.product-description').remove();
+      var description = $(this).find(':selected').attr('description');
+      $('#dynamic_product_binded').append('<p class="product-description"><strong>Description: </strong>'+description+'</p>');
     });
 });
 </script>

@@ -1500,7 +1500,12 @@ input.inputtext.inpupt13italic {
     display: none;
     -webkit-appearance: none;
 }
-
+form#search_form {
+    margin-bottom: 0;
+}
+.pad-top {
+    padding-top: 10px;
+}
 
 
 
@@ -1543,9 +1548,7 @@ footer .col-3{ float: none; }
 .home-main-menu{ background: none; }
 .home-main-menu img {padding-left: 0px;padding-top: 20px;}
 .home-main-menu a{display: block;clear: both;padding-bottom: 20px;text-align: center;}
- 
-
-header.home {    height: 450px;    background-size: cover !important;    background-position: -280px 0px !important;}
+ header.home {    height: 450px;    background-size: cover !important;    background-position: -280px 0px !important;}
 
 
 }
@@ -1584,8 +1587,7 @@ footer .col-3{ float: none; }
 .home-main-menu{ width: 290px; background: none; padding: 5px; }
 .home-main-menu img {    padding-left: 0;    padding-top: 5px;  }
 .home-main-menu a{    display: block;    clear: both;    padding-bottom: 10px;    text-align: center;  }
-header.home {    height: 250px;    background-size: cover !important;    background-position: -190px 10px !important;}
-
+header.home {        height: 250px;    background-size: cover !important;    background-position: -190px 3px !important;}
 select#prdselection {    max-width: 100%;}
 .custom_page_form {    padding: 15px;}
 .form_heading_section h2 {    font-size: 18px;}
@@ -1615,6 +1617,7 @@ button.continue {    font-size: 12px;    padding: 10px;    margin-left: 0;    ma
 .form-group.fieldgroup input {    width: 100%;}
 input.submit.btn.btn-success {    clear: both;    max-width: 100%;    margin-bottom: 10px;}
 .divider-heading h3 {    margin-bottom: 20px;}
-
+img.logo-image-display {    max-width: 192px;}
+.header-main {    height: 50px;}
 
 }

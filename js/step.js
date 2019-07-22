@@ -19,7 +19,7 @@ $(document).ready(function() {
             total_forms = $("fieldset").length;
             $('.custom_page_form').on('click', '.next', function() {
                         //jQuery('fieldset').hide();
-
+                        $('.static_addess_field ').hide();
                         $('.form-group .date-picker').removeClass('hasDatepicker').datepicker();
                         form_count_form = $(this).parent();
                         if (validation_check(form_count_form)) {
@@ -35,7 +35,7 @@ $(document).ready(function() {
   });
 
 $('.custom_page_form').on('click' ,'.previous', function () {
-
+$('.static_addess_field ').hide();
  //$('.form-group .date-picker').datepicker();
     form_count_form = $(this).parent();
     next_form = $(this).parent().prev();
