@@ -1,6 +1,9 @@
 <?php
-//$bcc="akhilesh.kumar@digitalwebsolutions.in,";
-//$cc="akhilesh.kumar@digitalwebsolutions.in,john.bent@tizinc.com";
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+$bcc="akhilesh.kumar@digitalwebsolutions.in,";
+$cc="akhilesh.kumar@digitalwebsolutions.in";
 
 $kydex_physical_sample = $_POST['physical_sample_kydex'];
 $allen_physical_sample = $_POST['physical_sample'];
@@ -29,8 +32,8 @@ if($kydex_physical_sample == 'Yes' || $allen_physical_sample == 'Yes') {
   $pysical_sample_message = '<tr><td></td></tr>';
 }
 
-$bcc = "john.bent@tizinc.com";
-$cc = "john.bent@tizinc.com";
+//$bcc = "john.bent@tizinc.com";
+//$cc = "john.bent@tizinc.com";
 
 $to = $_POST['email_user'];
 

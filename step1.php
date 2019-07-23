@@ -19,6 +19,6 @@
             <option name="ALLEN" value="allen">ALLEN®</option>
         </select>
     </div>
-
-    <input type="button" class="next btn btn-info" value="Next" disabled="disabled" />
+    <input type="button" class="next btn btn-info" value="Next"  />
+<!--     <input type="button" class="next btn btn-info" value="Next" disabled="disabled" /> -->
 </fieldset>

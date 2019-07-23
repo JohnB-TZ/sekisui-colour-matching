@@ -21,34 +21,33 @@ $(document).ready(function() {
                         //jQuery('fieldset').hide();
                         $('.static_addess_field ').hide();
                         $('.form-group .date-picker').removeClass('hasDatepicker').datepicker();
-                        form_count_form = $(this).parent();
-                        if (validation_check(form_count_form)) {
-                            next_form = $(this).parent().next();
+                            form_count_form = $(this).parents('fieldset');                       
+                            next_form = $(this).parents('fieldset').next();
                             next_form.show();
                             form_count_form.hide();
-                            setProgressBar(++form_count);
-                        } else {
-                        $('html, body').animate({
-                          scrollTop: ($('.error_message').first().offset().top - 100)
-                        }, 2000);
-                    }
+                            //setProgressBar(++form_count);
+                            console.log('t1');
+                       
+                    });
+
+
+
+            $('.custom_page_form').on('click' ,'.previous', function () {
+            $('.static_addess_field ').hide();
+             //$('.form-group .date-picker').datepicker();
+                form_count_form = $(this).parents('fieldset');
+                prev_form = $(this).parents('fieldset').prev();
+                prev_form.show();
+                form_count_form.hide();
+                //setProgressBar(--form_count);
+                console.log('t2');
+              });
+
   });
 
-$('.custom_page_form').on('click' ,'.previous', function () {
-$('.static_addess_field ').hide();
- //$('.form-group .date-picker').datepicker();
-    form_count_form = $(this).parent();
-    next_form = $(this).parent().prev();
-    next_form.show();
-    form_count_form.hide();
-    setProgressBar(--form_count);
-  });
-  setProgressBar(form_count);
-  function setProgressBar(curStep){
-    var percent = parseFloat(100 / total_forms) * curStep;
-    percent = percent.toFixed();
-    $(".progress-bar")
-      .css("width",percent+"%")
-      .html(percent+"%");
-  }
-});
+
+
+
+
+
+

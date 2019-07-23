@@ -1,7 +1,7 @@
  <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">       
 		<title>Custom Page</title>
        	 <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,140 +23,164 @@
 		        src:url("/Fonts/694027/55f60419-09c3-42bd-b81f-1983ff093852.eot?#iefix");
 		        src:url("/Fonts/694027/55f60419-09c3-42bd-b81f-1983ff093852.eot?#iefix") format("eot"),url("/Fonts/694027/9f93e286-eeaa-4077-b0b2-0e6901920f74.woff2") format("woff2"),url("/Fonts/694027/5b4a262e-3342-44e2-8ad7-719998a68134.woff") format("woff"),url("/Fonts/694027/4a3ef5d8-cfd9-4b96-bd67-90215512f1e5.ttf") format("truetype"),url("/Fonts/694027/58ab5075-53ea-46e6-9783-cbb335665f88.svg#58ab5075-53ea-46e6-9783-cbb335665f88") format("svg");
 		        }
+
 		</style>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script type="text/javascript" src="js/step.js"></script>
 
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="style.css">	
 		<!-- jquery datepicker -->
 		<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"rel = "stylesheet">
 		<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+		<!-- jquery datepicker -->
+		<script>
+         $(function() {
+
+                $(document).on('click',".form-group .date-picker-img", function(){
+
+						$(this).parents(".form-group ").find(".date-picker").datepicker("show");
+						//$('.form-group .date-picker').datepicker();
+						// $(this).closest(".dateselection ").find(".date-picker").datepicker("show");
+
+				});		
+         });    
+      </script>      
 	</head>
 
 	<?php include 'header.php';?>
 <body>
 <div class="custom_page_body pullup-high">
 	<div class="wrap">
-		<div class="custom_page_form">
+		<div class="custom_page_form " >				
 <!-- 			<div class="progress">
 			<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 			</div> -->
 			<div class="alert alert-success hide"></div>
-			<form id="colour_maching_form"  action="email.php"  method="post">
+			<form id="colour_maching_form"  action="email.php"  method="post">	
 			  <?php include 'step1.php';?>
-           <fieldset class="commonfieldgroup" id="con_value"></fieldset>
+           <fieldset class="commonfieldgroup" id="con_value"></fieldset> 
 			  <?php include 'step3.php';?>
-			  <?php include 'step4.php';?>
-			</form>
-			   <?php include 'kydex.php';?>
-			   <?php include 'allen.php';?>
+			  <?php include 'step4.php';?>							
+			</form>	
+			<?php include 'kydex.php';?>
+			<?php include 'allen.php';?>
+		
 		</div>
 
-<!--     <input type="hidden" name="multiple" id="multiple_select" value=""/> -->
+    <input type="hidden" name="multiple" id="multiple_select" value=""/>
 
-
+		
 	</div>
 </div>
 <div class="email_preview" id="email_preview" >
-
+	
 </div>
 <div class="response_loading" id="response">
 	<div class="innerdiv"><img src="images/loading.gif" class="img-responsive"></div>
-</div>
+</div>	
 
 <script type="text/javascript">
-$(document).ready(function() {
-    $('#prdselection').change(function() {
-        var checkSelect = parseInt($("#multiple_select").val());
-        var SelectedValue = $(this).find("option:selected").val();
-        if (SelectedValue == 'kydex') {
-            var kydex = jQuery(".kydex").html()
-            $("#con_value").append(kydex);
-        
+    $(document).ready(function () {				            
+        $('#prdselection').change(function () {
+        	 var checkSelect=parseInt($("#multiple_select").val());
+            var SelectedValue = $(this).find("option:selected").val();
+            if (SelectedValue == 'kydex') {
+				var kydex=jQuery(".kydex").html()
 
-            $(this).closest('.form-group').next('.btn').prop("disabled", false);
-        }
-        if (SelectedValue == 'allen') {
-            var allen = jQuery(".allen").html();
-            $("#con_value").append(allen);
-            $(this).closest('.form-group').next('.btn').prop("disabled", false);
-        }
+              if(checkSelect==1)
+              {
+				jQuery("#con_value").before('<fieldset class="commonfieldgroup" id="mul_con_value"></fieldset>');
+
+				jQuery("#mul_con_value").html(kydex);
+
+			}
+			   else
+			   jQuery("#con_value").html(kydex); 
+			   	 
+				$(this).closest('.form-group').next('.btn').prop("disabled", false);                           				          
+            }
+            if (SelectedValue == 'allen') {
+				var allen=jQuery(".allen").html();
+				  if(checkSelect==1)
+              {
+				jQuery("#con_value").before('<fieldset class="commonfieldgroup" id="mul_con_value"></fieldset>');
+				
+				jQuery("#mul_con_value").html(allen); 
+			}
+			   else
+			   jQuery("#con_value").html(allen); 
+			   	  
+				$(this).closest('.form-group').next('.btn').prop("disabled", false);                
+            }
+        });
+
+        /**********movment from confirmation step  Start **********/
+			$('.continue').click(function(e){
+				e.preventDefault();
+				current_fs = $('#step3');
+				next_fs = $('#step4');
+				next_fs.show();
+				current_fs.hide();
+			});
+
+			$('.addmore').click(function(event){
+				event.preventDefault();
+				current_fs = $('#step3');
+				prev_fs = $('#step1');
+				prev_fs.show();
+				if( parseInt($("#multiple_select").val())==1)
+                  $("#multiple_select").val(0);
+                else 
+                    $("#multiple_select").val(1);
+				current_fs.hide();		
+			});	
+
+			$('.lastprev').click(function(event){
+				event.preventDefault();
+				current_fs = $('#step4');
+				prev_fs = $('#step3');
+				prev_fs.show();
+				current_fs.hide();							
+				$('.btngroup_nav').show();;
+			});	
+		/**********movment from confirmation step End  **********/
+
+		/* Add More fields start*/
+					 $('body').on('change',".ul_required,.physical_sample", function(){	
+					 		
+								var SValue = $(this).find("option:selected").val();												
+								if(SValue=='Yes'){					
+								$(this).closest('.checkrequired').find('.ul_type_next').show('slow');													
+					       		 }else{		       		
+					       		$(this).closest('.checkrequired').find('.ul_type_next').hide('slow');					       			       		
+					       		 }
+					});
+							 $('body').on('change',".return_sample", function(){				
+								var pValue = $(this).find("option:selected").val();					
+								if(pValue=='Yes'){										
+									$('.static_addess_field').show('slow');				
+					       		 }else{		       				       		
+					       			$('.static_addess_field').hide('slow');	
+					       		 }
+							});
+		 /* Add More fields End*/
+
+		 /* For other option field*/
+		 $('body').on('change',".primary_light_source_selection,.primary_light_allen ", function(){
+		 	var oValue = $(this).find("option:selected").val();	
+		 	if(oValue=="Other"){
+		 		$(this).closest('.otheroption').find('.extra_input').show('slow');
+		 
+		 		alert('test');
+		 	}else{
+		 		$(this).closest('.otheroption').find('.extra_input').hide('slow');
+
+		 	}
+		 });
     });
-
-    /**********movment from confirmation step  Start **********/
-    $('.continue').click(function(e) {
-        e.preventDefault();
-        current_fs = $('#step3');
-        next_fs = $('#step4');
-        next_fs.show();
-        current_fs.hide();
-    });
-
-    //$('.addmore').click(function(event) {
-    $('body').on('click', '.addmore', function(event) {
-        event.preventDefault();
-        current_fs = $('#step3');
-        prev_fs = $('#step1');
-        prev_fs.show();
-       /* if (parseInt($("#multiple_select").val()) == 1)
-            $("#multiple_select").val(0);
-        else
-            $("#multiple_select").val(1);*/
-        current_fs.hide();
-        //$(this).closest('form').trigger("reset");
-        $('.static_addess_field ').hide();
-        $('#prdselection option:first').prop('selected',true);
-    });
-
-    $('.lastprev').click(function(event) {
-        event.preventDefault();
-        current_fs = $('#step4');
-        prev_fs = $('#step3');
-        prev_fs.show();
-        current_fs.hide();
-        $('.btngroup_nav').show();;
-    });
-    /**********movment from confirmation step End  **********/
-
-    /* Add More fields start */
-    $('body').on('change', '.ul_required', function() {
-
-        var SValue = $(this).find("option:selected").val();
-        if (SValue == 'Yes') {
-            $(this).closest('.checkrequired').find('.ul_type_next').show('slow');
-
-        } else {
-            $(this).closest('.checkrequired').find('.ul_type_next').hide('slow');
-        }
-    });
-
-    $('body').on('change', '.physical_sample', function() {
-      var SValue = $(this).find("option:selected").val();
-      if(SValue == 'Yes') {
-        $(this).closest('.checkrequired').find('.ul_type_next').show('slow');
-        $('.static_addess_field').show('slow');
-      } else {
-        $(this).closest('.checkrequired').find('.ul_type_next').hide('slow');
-        $('.static_addess_field').hide('slow');
-      }
-    })
-    /* Add More fields End */
-
-    /* For other option field*/
-    $('body').on('change', ".primary_light_source_selection,.primary_light_allen ", function() {
-        var oValue = $(this).find("option:selected").val();
-        if (oValue == "Other") {
-            $(this).closest('.otheroption').find('.extra_input').show('slow');
-             $(this).closest('.otheroption').find('.extra_input').find('input').addClass('require');
-
-        } else {
-            $(this).closest('.otheroption').find('.extra_input').hide('slow');
-            $(this).closest('.otheroption').find('.extra_input').find('input').removeClass('require');
-        }
-    });
-});
 </script>
 
 <script type="text/javascript">
@@ -167,17 +191,18 @@ $(document).ready(function() {
         var form=$('#colour_maching_form');
         e.preventDefault();
            form_count_form = $(this).parents('.commonfieldgroup');
-          // if(validation_check(form_count_form)) {
+           if(validation_check(form_count_form))
+                     {
 	        $.ajax({
 	            type: "POST",
 	            url: 'email.php',
 	            data: form.serialize(),
 	            beforeSend : function() {
-		        //this will run before sending an ajax request do what ever activity
+		        //this will run before sending an ajax request do what ever activity 
 		      		jQuery('#email_preview').hide();
 		            jQuery(".response_loading").show('fast');
-
-		         },
+					
+		         },	 
 	            success: function(data)
 	            {
 	            	//jQuery('.custom_page_body').hide('slow')
@@ -185,11 +210,11 @@ $(document).ready(function() {
 					jQuery('#email_preview').show();
 	                //var jsonData = JSON.parse(data);
 	 				jQuery('#email_preview').html('<p>Form submitted successfully.</p>');
-
-	 			/*	  window.setTimeout(function () {
+	 				  
+	 				  window.setTimeout(function () {
 	 						window.location.href= "thank-you.php";
 	      				}, 400);
-*/
+
 	           },
 		        error: function (xhr, desc, err)
 		        {
@@ -197,30 +222,24 @@ $(document).ready(function() {
 
 		        }
 	       });
-	    // }
-
+	     }   
+		
      });
 });
 </script>
 <script type="text/javascript">
 $(document).ready(function(){
 		 $('body').on('change',".product_selection_series ", function(){
+    	console.log('1');
         var product_selection_series  = $(".product_selection_series  option:selected").val();
-        $('p.product-description').remove();
         console.log(product_selection_series);
         $.ajax({
             type: "POST",
             url: "process-request-product-series.php",
-            data: { productseries : product_selection_series  }
+            data: { productseries : product_selection_series  } 
         }).done(function(data){
             $("#dynamic_product_binded").html(data);
         });
-    });
-    // change the description under the product select field...
-    $('body').on('change', '#prd-select-populate', function() {
-      $('p.product-description').remove();
-      var description = $(this).find(':selected').attr('description');
-      $('#dynamic_product_binded').append('<p class="product-description"><strong>Description: </strong>'+description+'</p>');
     });
 });
 </script>
